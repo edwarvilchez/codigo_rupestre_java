@@ -28,14 +28,14 @@ public class Saludos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String nombre = "Edwar 'eddiemonster' Vilchez";
+		String nombre = "Edwar eddiemonster Vilchez";
 		int edad = 47;
 		String pais = "Venezuela";
 		
-		request.setAttribute("Nombre", nombre);
-		request.setAttribute("Edad", edad);
-		request.setAttribute("País", pais);
-		request.setAttribute("Creación", LocalDateTime.now().toString());
+		request.setAttribute("nombre", nombre);
+		request.setAttribute("edad", edad);
+		request.setAttribute("pais", pais);
+		request.setAttribute("creacion", LocalDateTime.now().toString());
 		
 		request.getRequestDispatcher("/saludos.jsp").forward(request, response);
 	}
