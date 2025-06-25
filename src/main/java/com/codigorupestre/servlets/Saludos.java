@@ -28,9 +28,9 @@ public class Saludos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String nombre = "Edwar eddiemonster Vilchez";
-		int edad = 47;
-		String pais = "Venezuela";
+		String nombre = request.getParameter("nombre");
+		int edad = Integer.parseInt(request.getParameter("edad"));
+		String pais = request.getParameter("pais");
 		
 		request.setAttribute("nombre", nombre);
 		request.setAttribute("edad", edad);
@@ -39,7 +39,5 @@ public class Saludos extends HttpServlet {
 		
 		request.getRequestDispatcher("/saludos.jsp").forward(request, response);
 	}
-
-	
 
 }
